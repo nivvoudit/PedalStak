@@ -17,7 +17,7 @@ var session      = require('express-session');
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/pedalstak'); // connect to our database
+mongoose.connect('mongodb://localhost/pedalstak_db'); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -25,7 +25,12 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
-
+app.use("/public/css",express.static(__dirname + "/public/css")); // get css
+app.use("/public/img",express.static(__dirname + "/public/img")); // get images
+app.use("/public/audio",express.static(__dirname + "/public/audio")); // get audio samples
+app.use("/public/dist",express.static(__dirname + "/public/dist")); // get compiled audio fx
+app.use("/public/scripts",express.static(__dirname + "/public/scripts")); //get scripts
+app.use("/public/src",express.static(__dirname + "/public/src")); //get src
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
