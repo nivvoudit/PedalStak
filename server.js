@@ -19,7 +19,7 @@ var session      = require('express-session');
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/pedalstak_db'); // connect to our database
+mongoose.connect('mongodb://heroku_2cl602hn:nug8js3nub2fqk4mi5hnq13kev@ds129004.mlab.com:29004/heroku_2cl602hnhe'); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
