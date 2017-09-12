@@ -28,11 +28,16 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 app.use("/public/css",express.static(__dirname + "/public/css")); // get css
+app.use("/public/device-mockups",express.static(__dirname + "/public/device-mockups")); // get css
+app.use("/public/scss",express.static(__dirname + "/public/scss")); // get css
+app.use("/public/vendor",express.static(__dirname + "/public/vendor")); // get css
 app.use("/public/img",express.static(__dirname + "/public/img")); // get images
 app.use("/public/audio",express.static(__dirname + "/public/audio")); // get audio samples
 app.use("/public/dist",express.static(__dirname + "/public/dist")); // get compiled audio fx
 app.use("/public/scripts",express.static(__dirname + "/public/scripts")); //get scripts
 app.use("/public/src",express.static(__dirname + "/public/src")); //get src
+app.use("/public/fonts",express.static(__dirname + "/public/fonts")); //get fonts
+app.use("/public/js",express.static(__dirname + "/public/js")); //
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
